@@ -1,8 +1,8 @@
-# Your Name Here
+# Gracin Goff
 # UWYO COSC 1010
-# Submission Date
+# 10-15-24
 # Lab 06
-# Lab Section: 
+# Lab Section: 10
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -71,6 +71,38 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
 
+letters = {}
+letters['a'] = 1
+letters['a'] += 1
+
+for letter in random_string:
+    if letter not in letters.keys():
+        letters[letter] = 1
+    else :
+        letters[letter] += 1
+
+
+sorted(letters)
+for letter in sorted(letters.keys()):
+    print(letter,"occured" , letters[letter],"times")
+    
+most = 'a'
+
+for letter in sorted(letters.keys()):
+    if letters[letter] > letters[most]:
+        most = letter
+
+
+
+
+least = 'a'
+for letter in sorted(letters.keys()):
+    if letters[letter] < letters[least]:
+        least = letter
+
+
+
+
 #Tips and trick:
 # You can iterate through strings like you would a list
 # All characters are lowercase 
@@ -88,8 +120,8 @@ print(len(random_string)) # Print out the size for reference
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+most_occurred = most
+least_occurred = least
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
@@ -98,3 +130,9 @@ print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+
+
+
+for key in sorted(letters.keys()):
+   percent = (letters[key]/len(random_string))*100
+   print(f"{key} is {percent:.2f} of random_string")
